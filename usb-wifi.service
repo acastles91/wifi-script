@@ -1,0 +1,17 @@
+[Unit]
+Description=USB stick Wifi script
+After=NetworkManager.service
+Wants=network.target
+
+[Service]
+ExecStartPre=/usr/bin/sleep 45
+ExecStart=/usr/local/bin/wifi-script.sh
+Type=oneshot
+RemainAfterExit=true
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
+
+
